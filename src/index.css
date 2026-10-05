@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom Scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090d16;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-slate-900/80 backdrop-blur-md border border-slate-800/80 shadow-xl;
+  }
+  .glass-card-hover {
+    @apply glass-card hover:border-brand-500/50 hover:shadow-brand-500/10 hover:shadow-2xl transition-all duration-300;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-sky-300 to-indigo-400;
+  }
+  .gradient-border {
+    position: relative;
+    border-radius: 0.75rem;
+    background: linear-gradient(60deg, #0e8ce8, #6366f1, #a855f7);
+    padding: 1px;
+  }
+  .gradient-border > * {
+    border-radius: calc(0.75rem - 1px);
+  }
+}
